@@ -4,7 +4,7 @@
 #SBATCH -p eck-q
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=2
-#SBATCH -J Fran_covid
+#SBATCH -J htSeqcount
 
 ANOTACION="/home/alumno11/LABORATORIO/RNA_SEQ_Penta_y_Tardona/Prudul26A.chromosomes.gff3"
 FILE_FOLDERS="/home/alumno11/LABORATORIO/RNA_SEQ_Penta_y_Tardona/Files_samples"
