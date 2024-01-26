@@ -3,7 +3,7 @@
 #SBATCH --chdir=/home/alumno11/LABORATORIO/RNA_SEQ_Penta_y_Tardona/
 #SBATCH -p eck-q
 #SBATCH --cpus-per-task=2
-#SBATCH -J mapping_penta_a_1
+#SBATCH -J mapping_hisat2_filtering_Samtools
 
 
 GENOME_FOLDER="/home/alumno11/LABORATORIO/RNA_SEQ_Penta_y_Tardona"
