@@ -14,6 +14,7 @@ For each replicate, the paired-ends were mapped into the reference genome of cul
 
 ## 3) Counting of the reads
 
+The counting process for each replicate was made using the function ‘htseq-count’ from the HTSeqv.0.9.1. (Anders et al., 2015) and the annotation file of the genome. The script for obtaining the counting files is 'htSeq_count.sh'
 
 ## 4) PCA plot of the samples
 ## 5) Differential expression analysis
