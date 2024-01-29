@@ -30,8 +30,23 @@ The parameters used by htseq-count are:
 
 The differential expression analysis was performed using the R DESeq2 package (Love et al., 2014). Two different analyses were made: (1) A differential expression comparison between Stage A vs AB in ‘Penta’ and (2) a differential expression comparison between Stage A vs AB in ‘Tardona’.  To detect genes differentially expressed between stages, results of each analysis were filter by a p-adj ≤ 0.05 and a log2FC ≥ |2|.
 
-The steps followed for conducting both differential expression analysis can be found on the 'scripts' folder ('Script_DESeq2_Penta_and_Tardona_def.R'). As inputs, this script requires the count files generated in the counting steps. As output, it generated a csv file for each variety (Penta and Tardona in this case) with the differential expressed genes with have a p-adj ≤ 0.05 and a log2FC ≥ |2|.
+The steps followed for conducting both differential expression analysis can be found on the 'scripts' folder ('Script_DESeq2_Penta_and_Tardona_def.R'). As inputs, this script requires the count files generated in the counting steps, and a excel file with the treatment information for each variety. The file 'information_Penta_samples.xlsx' is example of this file, and can be viewed in the Examples' folder. As output, it generated a csv file for each variety (Penta and Tardona in this case) with the differential expressed genes with have a p-adj ≤ 0.05 and a log2FC ≥ |2|.
 
-## 6) Determination of differential expressed genes located at QTLs
+## 5) Determination of differential expressed genes located at QTLs
+
+For the identification of differentially expressed genes (DEGs) at the QTLs, a R script was made. Two type of inputs are needed: (1) The DEG file (In our case there are two DEG files, one for Penta and another for Tardona); (2) The file with all the QTLs. This file has a defined structure, wiThe file must be a txt file with 7 columns:
+
+1. SNP_associated2_region: the name of the QTL
+2. Initial_REGION: the physical starting position of the QTL
+3. End_REGION: the physical ending position of the QTL
+4. Chromosome: the name of the chromosome where the QTL is located
+5. Gene_name: the ID of the gene located in the QTL
+6. Initial: The physical starting position of the gene in the genome
+7. End: the physical ending position of the gene in the genome
+
+An example of the structure of this file can be seen at the Examples' folder.
+
+
+  
 
 
