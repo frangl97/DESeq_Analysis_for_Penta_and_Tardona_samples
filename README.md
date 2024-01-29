@@ -11,9 +11,19 @@ For each replicate, the paired-ends were mapped into the reference genome of cul
 
 The output obtained from this script is a filtered bam file for each replicate.
 
+The fastq sequences 1 and 2 for each replicate must be located in a folder called with the replicate's name. The output bam will be located in that folder after the procedure.
+
 ## 3) Counting of the reads
 
-The counting process for each replicate was made using the function ‘htseq-count’ from the HTSeqv.0.9.1. (Anders et al., 2015) and the annotation file of the genome. The script for obtaining the counting files is 'htSeq_count.sh'
+The counting process for each replicate was made using the function ‘htseq-count’ from the HTSeqv.0.9.1. (Anders et al., 2015) and the annotation file of the genome. The script for obtaining the counting files is 'htSeq_count.sh'. The input data are the bam file obtained for each sample and replicate, and the annotation file of the genome (previously used for the mapping step). The output file is a tabular file with two columns (the id of the genes and the counts). It should be notice that the last lines are a summary of the counting process, and those lines should be removed from each file.
+
+The parameters used by htseq-count are:
+-s no: the reads were not strand-specific
+-r pos: the bam file is sort by the mapping position
+-f bam: the input file for the counting is a bam file
+--type=gene: the feature type used for the counting. In this case it was used the genes for the counting.
+--mode=union: specifies the counting mode. The "union" mode is used when a read is assigned to all the features it overlaps.
+--idattr=ID: This parameter specifies the attribute in the GFF/GTF file that contains the unique identifier for each feature. In the case of the GFF file used, the gene names have the 'ID' atributte.
 
 ## 4) PCA plot of the samples
 ## 5) Differential expression analysis
