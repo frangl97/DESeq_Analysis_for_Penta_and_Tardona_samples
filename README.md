@@ -25,6 +25,13 @@ The parameters used by htseq-count are:
 5. --mode=union: specifies the counting mode. The "union" mode is used when a read is assigned to all the features it overlaps.
 6. --idattr=ID: This parameter specifies the attribute in the GFF/GTF file that contains the unique identifier for each feature. In the case of the GFF file used, the gene names have the 'ID' atributte.
 
-## 4) PCA plot of the samples
-## 5) Differential expression analysis
+
+## 4) Differential expression analysis
+
+The differential expression analysis was performed using the R DESeq2 package (Love et al., 2014). Two different analyses were made: (1) A differential expression comparison between Stage A vs AB in ‘Penta’ and (2) a differential expression comparison between Stage A vs AB in ‘Tardona’.  To detect genes differentially expressed between stages, results of each analysis were filter by a p-adj ≤ 0.05 and a log2FC ≥ |2|.
+
+The steps followed for conducting both differential expression analysis can be found on the 'scripts' folder ('Script_DESeq2_Penta_and_Tardona_def.R'). As inputs, this script requires the count files generated in the counting steps. As output, it generated a csv file for each variety (Penta and Tardona in this case) with the differential expressed genes with have a p-adj ≤ 0.05 and a log2FC ≥ |2|.
+
 ## 6) Determination of differential expressed genes located at QTLs
+
+
