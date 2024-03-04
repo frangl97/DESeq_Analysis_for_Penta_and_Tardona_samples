@@ -23,7 +23,7 @@ for folder in ${FILE_FOLDERS}/* ; do
   hisat2 -p 4 -x ${GENOME_FOLDER}/texas_genome -1 ${folder}/*1.fastq.gz -2 ${folder}/*2.fastq.gz -S mapping_${sample}.sam
 
   # Filter the SAM file and obtain the BAM, and sorter it
-  samtools view -bS mapping_${sample}.sam | samtools view -b -q 30 -l 35 - | samtools sort -o mapping_${sample}_sorted_filtered.bam
+  samtools view -bS mapping_${sample}.sam | samtools view -b -q 30 - | samtools sort -o mapping_${sample}_sorted_filtered.bam
   rm mapping_${sample}.sam
   mv mapping_${sample}_sorted_filtered.bam ${folder}/
 done
